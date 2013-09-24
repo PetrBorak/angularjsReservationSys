@@ -1,0 +1,52 @@
+
+  <h1>Welcome, please fill in the reservation.</h1>
+  <form ng-controller="form" name="form" novalidate>
+  <label>First name</label>
+  <input name="firstName" type="text" ng-model="formdata.fn" placeholder="Your name" required value="formadata.fn">
+   <p ng-show="form.firstName.$error.required" class="text-warning">
+  This field is obligatory
+  </p>
+  
+  <label>Last name</label>
+  <input name="lastName" type="text" ng-model="formdata.ln" placeholder="Your surname" required value="formadata.ln">
+  <p ng-show="form.lastName.$error.required" class="text-warning">
+  This field is obligatory
+  </p>
+
+  <label>Dining date</label>
+  <input name="date" type="text" ng-model="formdata.date" datepickerdir id="datepicker" placeholder="Enter the date" required value="formadata.date">
+  <p ng-show="form.date.$error.required" class="text-warning">
+  This field is obligatory
+  </p>
+
+  <label>Number of covers</label>
+  <input name="noc" type="text" ng-model="formdata.noc" placeholder="How many people?" required integer value="formadata.noc">
+  <p ng-show="form.noc.$error.required" class="text-warning">
+  This field is obligatory
+  </p>
+  <p ng-show="form.noc.$error.integer" class="text-warning">
+  This field must be a number
+  </p>
+
+  <label>Phone number</label>
+  <input name="phonenum" type="text" ng-model="formdata.pn" placeholder="Phone number" required phonenum value="formadata.pn">
+  <p ng-show="form.phonenum.$error.required" class="text-warning">
+  This field is obligatory
+  </p>
+  <p ng-show="form.phonenum.$error.phonenumber" class="text-warning">
+  Please, write down a valid phone number in one of the following formats:
+  <br/>111-111-1111<br/>
+  111 111 1111
+  </p>
+  
+  <label>Email</label>
+  <input type="email" name="mail" ng-model="formdata.email" placeholder="your email please" required>
+  <p ng-show="form.mail.$error.email" class="text-warning">
+  This is not a valid email
+  </p>
+  <p ng-show="form.mail.$error.required" class="text-warning">
+  This field is obligatory
+  </p>
+  <button ng-click="formsave(form)" class="btn btn-large btn-primary" type="submit">Submit</button>
+  </form>
+          
